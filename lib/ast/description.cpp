@@ -53,7 +53,8 @@ Expect<void> ImportDesc::loadBinary(FileMgr &Mgr,
     return GlobType.loadBinary(Mgr, PConf);
   }
   default:
-    return logLoadError(ErrCode::InvalidGrammar, Mgr.getOffset() - 1, NodeAttr);
+    return logLoadError(ErrCode::InvalidImportKind, Mgr.getOffset() - 1,
+                        NodeAttr);
   }
   return {};
 }
